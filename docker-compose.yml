@@ -1,0 +1,12 @@
+version: '3'
+services:
+  react:
+    build: ./src
+    container_name: react
+    ports:
+        - 8083:3000
+    volumes: 
+      - ./src/app:/usr/src/app
+    working_dir: /usr/src/app
+    stdin_open: true
+    tty: true
