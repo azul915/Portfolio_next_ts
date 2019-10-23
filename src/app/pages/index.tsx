@@ -17,7 +17,7 @@ const IndexPage: NextPage = () => {
         <Grid item xs={12}>
           <MainImg/>
         </Grid>
-        
+
         <Grid item xs={12}>
           <Profile/>
         </Grid>

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const Skills: React.FunctionComponent = () => (
+const Skills: React.FC = () => (
     <h1>this is Skills</h1>
 )
 

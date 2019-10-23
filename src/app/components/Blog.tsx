@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const Blog: React.FunctionComponent = () => (
+const Blog: React.FC = () => (
     <h1>this is Blog</h1>
 )
 

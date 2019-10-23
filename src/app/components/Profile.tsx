@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const Profile: React.FunctionComponent = () => (
+const Profile: React.FC = () => (
     <h1>this is Profile</h1>
 )
 
