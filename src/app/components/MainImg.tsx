@@ -21,21 +21,13 @@ const MainImg: React.FC = () => {
     return (
         <div>
             <Typed
-                strings={['Here you can find anything']}
-                typeSpeed={40}
-            />
-            <br/>
-
-            <Typed
+            className={classes.root}
             strings={[
-                'Search for products',
-                'Search for categories',
-                'Search for brands']}
+                'Hi! I\'m Kosei Aoyagi',
+                'I\'m a Software Engineer!!']}
                 typeSpeed={40}
                 backSpeed={50}
-                attr="placeholder"
                 loop >
-                <input type="text"/>
             </Typed>
         </div>
     );
