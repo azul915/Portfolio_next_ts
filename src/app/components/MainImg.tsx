@@ -1,7 +1,6 @@
-import * as React from 'react'
-import { useState } from 'react'
-import { Typist } from 'react-typist'
-import { makeStyles } from '@material-ui/core/styles'
+import * as React from 'react';
+import Typed from 'react-typed';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
@@ -18,22 +17,27 @@ const useStyles = makeStyles({
 const MainImg: React.FC = () => {
 
     const classes = useStyles();
-    const [typing, setState] = useState({ typing: false });
-    const typingDone = () => {
-        setState({ typing: true });
-    };
-    
+
     return (
-        {this:typing
-            ?   <Typist
-                    startDelay={400}
-                    onTypingDone={typingDone}
-                    useStyles={classes.root}
-                >
-                    <h1>Hi! I'm Kosei Aoyagi</h1>
-                </Typist>
-            : ''
-        }
+        <div>
+            <Typed
+                strings={['Here you can find anything']}
+                typeSpeed={40}
+            />
+            <br/>
+
+            <Typed
+            strings={[
+                'Search for products',
+                'Search for categories',
+                'Search for brands']}
+                typeSpeed={40}
+                backSpeed={50}
+                attr="placeholder"
+                loop >
+                <input type="text"/>
+            </Typed>
+        </div>
     );
 
 }
