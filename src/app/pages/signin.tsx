@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
+import Link from 'next/link';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
@@ -32,6 +32,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+// TODO: GoのAuthenticate用のAPIをonClickで実行
 const SignInPage: React.FC = () => {
 
     const classes = useStyles();
@@ -52,9 +53,10 @@ const SignInPage: React.FC = () => {
                 margin="normal"
                 required
                 fullWidth
+                //value={email}
                 id="email"
-                label="メールアドレスを入力"
                 name="email"
+                label="メールアドレスを入力"
                 autoComplete="email"
                 autoFocus
             />
@@ -63,10 +65,11 @@ const SignInPage: React.FC = () => {
                 margin="normal"
                 required
                 fullWidth
+                //value={password}
+                id="password"
                 name="password"
                 label="パスワードを入力"
                 type="password"
-                id="password"
                 autoComplete="current-password"
             />
             <FormControlLabel
@@ -78,13 +81,14 @@ const SignInPage: React.FC = () => {
                 fullWidth
                 variant="contained"
                 color="primary"
+                //onClick={}
                 className={classes.submit}
             >
                 管理画面にログインする
             </Button>
             <Grid container>
                 <Grid item xs>
-                <Link href="/" variant="body2">
+                <Link href="/">
                     <a>ホームへ戻る</a>
                 </Link>
                 </Grid>
