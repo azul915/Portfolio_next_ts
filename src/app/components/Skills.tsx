@@ -1,9 +1,24 @@
-import * as React from 'react'
+import * as React from 'react';
+//import { makeStyles } from '@material-ui/core/styles';
+//import { Grid } from '@material-ui/core';
+
+// const useStyles = makeStyles({
+//     card: {
+//         display: 'flex',
+//     },
+//     cardDetails: {
+//         flex: 1,
+//     },
+//     cardMedia: {
+//         width: 160,
+//     },
+// });
 
 const Skills: React.FC = () => {
 
-    const list = [];
-    const skill = [
+    // const classes = useStyles();
+
+    const skills = [
         {
             category:{
                 id:0,
@@ -90,28 +105,23 @@ const Skills: React.FC = () => {
         }
     ];
 
-    for (let idx in skill) {
-        list.push(
-            <li className="name">
-                <div>{skill[idx].name}</div>
-                <div>{skill[idx].duration}</div>
-                <div>{skill[idx].category.name}</div>
-                <div>{skill[idx].term}</div>
-                <div>{skill[idx].self_evaluation}</div>
-                <div>{skill[idx].detail}</div>
+    const list = skills.map((item) => {
+        return (
+            <li>
+                <div>{item.name}</div>
+                <div>{item.duration}</div>
+                <div>{item.category.name}</div>
+                <div>{item.term}</div>
+                <div>{item.self_evaluation}</div>
+                <div>{item.detail}</div>
             </li>
         );
-    }
+    })
 
     return (
-        <div>
-            <h1>this is Skills</h1>
-            <div id="server_side">
-                <ul className="container">
-                    <li>{list}</li>
-                </ul>
-            </div>
-        </div>
+        <ul>
+            {list}
+        </ul>
     );
 
 }
