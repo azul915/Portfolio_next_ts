@@ -1,35 +1,18 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Typography } from '@material-ui/core';
+import { Grid, Typography, CardActionArea, Card, CardContent, CardMedia, Hidden } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
-    mainFeaturedPost: {
-        position: 'relative',
-        backgroundColor: theme.palette.grey[800],
-        color: theme.palette.common.white,
-        marginBottom: theme.spacing(4),
-        backgroundImage: 'url(https://source.unsplash.com/random)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
+const useStyles = makeStyles({
+    card: {
+        display: 'flex',
     },
-    overlay: {
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        right: 0,
-        left: 0,
-        backgroundColor: 'rgba(0,0,0,.3)',
+    cardDetails: {
+        flex: 1,
     },
-    mainFeaturedPostContent: {
-        position: 'relative',
-        padding: theme.spacing(3),
-        [theme.breakpoints.up('md')]: {
-            padding: theme.spacing(6),
-            paddingRight: 0,
-        },
+    cardMedia: {
+        width: 160,
     },
-}));
+});
 
 const Skills: React.FC = () => {
 
@@ -124,29 +107,36 @@ const Skills: React.FC = () => {
 
     const list = skills.map((item) => {
         return (
-            <Paper className={classes.mainFeaturedPost}>
-                <div className={classes.overlay}/>
-                <Grid container>
-                    <Grid item md={6}>
-                        <div className={classes.mainFeaturedPostContent}>
-                            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                                {item.name}
-                            </Typography>
-                            <Typography variant="h5" color="inherit" paragraph>
-                                {item.category.name}
-                            </Typography>
-                            <Typography variant="h5" color="inherit" paragraph>
-                                {item.detail}
-                            </Typography>
+            <Grid item xs={12} md={6}>
+                <CardActionArea component="a" href="#">
+                    <Card className={classes.card}>
+                        <div className={classes.cardDetails}>
+                            <CardContent>
+                                <Typography component="h2">
+                                    {item.name}
+                                </Typography>
+                                <Typography variant="subtitle1" color="textSecondary">
+                                    {item.term}
+                                </Typography>
+                                <Typography variant="subtitle1" paragraph>
+                                    {item.detail}
+                                </Typography>
+                                <Typography variant="subtitle1" color="primary">
+                                    Continue reading...
+                                </Typography>
+                            </CardContent>
                         </div>
-                    </Grid>
-                </Grid>
-            </Paper>
+                        <Hidden xsDown>
+                            <CardMedia className={classes.cardMedia}></CardMedia>
+                        </Hidden>
+                    </Card>
+                </CardActionArea>
+            </Grid>
         );
     })
 
     return (
-        <Grid container spacing={5} >
+        <Grid container spacing={4} >
             {list}
         </Grid>
     );
