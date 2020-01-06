@@ -28,23 +28,18 @@ const useStyles = makeStyles({
     },
 });
 
- const Skills: React.FC = () => {
+const Skills: React.FC = () => {
 
     const classes = useStyles();
     const skills: Skill[] = [];
     const [data, setData] = useState({ skills });
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios(
-                'http://localhost:1999/skills?term=frontend',
-            );
-            setData(result.data);
-        };
+    const fetchData = async () => {
+        const result = await axios('http://localhost:1999/skills?term=serverside',);
+        setData(result.data);
+    };
 
-        fetchData();
-    },[]);
-
+    useEffect(() => { fetchData(); }, []);
 
     const list = data.skills.map((s: Skill) => {
         return (
