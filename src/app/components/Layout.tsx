@@ -35,7 +35,9 @@ const Layout: React.FunctionComponent<Props> = ({
     <footer>
       <hr />
       <span>I'm here to stay (Footer)</span>
-      <Link href="/admin">Go to admin Page</Link>
+      <Link href="/admin">
+        <a>Go to admin Page</a>
+      </Link>
     </footer>
   </div>
 )
