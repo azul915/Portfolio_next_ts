@@ -5,6 +5,19 @@
 // import User from 'path/to/interfaces';
 
 export type User = {
-  id: number
+  id:   number
   name: string
+}
+
+export type Skill = {
+  category: {
+    id: number
+    name: string
+  }
+  created_at: string
+  detail: string
+  duration: number
+  name: string
+  self_evaluation: number
+  term: string
 }
