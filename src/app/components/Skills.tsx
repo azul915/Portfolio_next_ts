@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography, CardActionArea, Card, CardContent } from '@material-ui/core';
-import { Skill } from '../interfaces/index';
 
 const useStyles = makeStyles({
     card: {
@@ -15,106 +14,30 @@ const useStyles = makeStyles({
     },
 });
 
-const Skills: React.FC = () => {
+interface Props {
+    skills: Array<{
+        category: Array<{
+            id: number
+            name: string
+        }>
+        created_at: string
+        detail: string
+        duration: number
+        name: string
+        self_evaluation: number
+        term: string
+    }>
+}
+
+const Skills: React.FC<Props> = (props: Props) => {
 
     const classes = useStyles();
 
-    const getSkills = () => {
-        return [
-            {
-                category:{
-                    id:0,
-                    name:"言語"
-                },
-                created_at:"0001-01-01T00:00:00Z",
-                detail:"SpringBootでAPIコンテナを実装したことがある。",
-                duration:3,
-                name:"Kotlin",
-                self_evaluation:0,
-                term:"serverside"
-            },
-            {
-                category:{
-                    id:0,
-                    name:"言語"
-                },
-                created_at:"2019-06-23T03:34:47.07Z",
-                detail:"Java8で実装ができる",
-                duration:18,
-                name:"Java",
-                self_evaluation:3,
-                term:"serverside"
-            },
-            {
-                category:{
-                    id:0,
-                    name:"言語"
-                },
-                created_at:"2019-12-07T16:56:23.804817Z",
-                detail:"SpringBootでAPIコンテナを実装したことがある。",
-                duration:3,
-                name:"Kotlin",
-                self_evaluation:4,
-                term:"serverside"
-            },
-            {
-                category:{
-                    id:0,
-                    name:"言語"
-                },
-                created_at:"2019-12-31T15:00:00Z",
-                detail:"Seleniumでテストを書いたことがある",
-                duration:3,
-                name:"Python",
-                self_evaluation:2,
-                term:"serverside"
-            },
-            {
-                category:{
-                    id:0,
-                    name:"言語"
-                },
-                created_at:"2019-06-23T06:52:28.755Z",
-                detail:"基本的な文法は理解して、実装することができる。",
-                duration:3,
-                name:"Ruby",
-                self_evaluation:2,
-                term:"serverside"
-            },
-            {
-                category:{
-                    id:2,
-                    name:"フレームワーク"
-                },
-                created_at:"2019-06-23T06:56:22.93Z",
-                detail:"基本的なCRUDの実装経験がある。",
-                duration:6,
-                name:"Spring",
-                self_evaluation:2,
-                term:"serverside"
-            },
-            {
-                category:{
-                    id:2,
-                    name:"フレームワーク"
-                },
-                created_at:"2019-06-23T06:27:35.065Z",
-                detail:"基本的なCRUDを作成することができる。",
-                duration:3,
-                name:"rubyonRails",
-                self_evaluation:2,
-                term:"serverside"
-            }
-        ]
-    };
-
     return (
         <div>
-            <h1>This is Skills!!</h1>
-            <h2>here</h2>
             <Grid container spacing={4} >
-                {getSkills().map((skill: Skill) => (
-                    <Grid item xs={12} md={6}>
+                {props.skills.map((skill, index) => (
+                    <Grid item xs={12} md={6} key={index}>
                         <CardActionArea component="a" href="#">
                             <Card className={classes.card}>
                                 <div className={classes.cardDetails}>

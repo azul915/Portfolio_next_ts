@@ -10,6 +10,7 @@ import MainImg from '../components/MainImg'
 import Profile from '../components/Profile'
 import Products from '../components/Products'
 import Blog from '../components/Blog'
+import Skills from '../components/Skills'
 
 interface Props {
     skills: Array<{
@@ -26,37 +27,36 @@ interface Props {
     }>
 }
 
-const IndexPage: NextPage<Props> = (props: Props) => (
-    <Layout title="">
-        <Grid container>
-            <Grid item xs={12}>
-                <MainImg />
-            </Grid>
+const IndexPage: NextPage<Props> = (props: Props) => {
 
-            <Grid item xs={12}>
-                <Profile />
-            </Grid>
+    const skills = props.skills;
 
-            <Grid item xs={12}>
-                <ul>
-                    {props.skills.map((skill, index) => (
-                        <li key={index}>
-                            <a>{skill.name}</a>
-                        </li>
-                    ))}
-                </ul>
-            </Grid>
+    return (
+        <Layout title="">
+            <Grid container>
+                <Grid item xs={12}>
+                    <MainImg />
+                </Grid>
 
-            <Grid item xs={12}>
-                <Products />
-            </Grid>
+                <Grid item xs={12}>
+                    <Profile />
+                </Grid>
 
-            <Grid item xs={12}>
-                <Blog />
+                <Grid item xs={12}>
+                    <Skills skills={skills} />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Products />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Blog />
+                </Grid>
             </Grid>
-        </Grid>
-    </Layout>
-);
+        </Layout>
+    );
+}
 
 IndexPage.getInitialProps = async () => {
 
