@@ -12,7 +12,7 @@ const useStyles = makeStyles({
         height: 48,
         padding: '0 30px',
     },
-})
+});
 
 const MainImg: React.FC = () => {
 
@@ -32,5 +32,6 @@ const MainImg: React.FC = () => {
         </div>
     );
 
-}
+};
+
 export default MainImg

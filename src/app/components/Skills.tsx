@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography, CardActionArea, Card, CardContent } from '@material-ui/core';
+import { Card, CardActionArea, CardContent, Grid, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
     card: {
@@ -64,6 +64,6 @@ const Skills: React.FC<Props> = (props: Props) => {
         </div>
     );
 
-}
+};
 
 export default Skills

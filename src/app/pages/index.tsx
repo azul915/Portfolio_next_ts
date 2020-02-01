@@ -1,16 +1,16 @@
-import * as React from 'react'
-import { NextPage } from 'next'
+import * as React from 'react';
+import { NextPage } from 'next';
 
-import Grid from '@material-ui/core/Grid'
+import Grid from '@material-ui/core/Grid';
 
-import fetch from 'isomorphic-unfetch'
+import fetch from 'isomorphic-unfetch';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 import MainImg from '../components/MainImg'
-import Profile from '../components/Profile'
-import Products from '../components/Products'
-import Blog from '../components/Blog'
-import Skills from '../components/Skills'
+import Profile from '../components/Profile';
+import Skills from '../components/Skills';
+import Products from '../components/Products';
+import Blog from '../components/Blog';
 
 interface Props {
     skills: Array<{
@@ -56,13 +56,15 @@ const IndexPage: NextPage<Props> = (props: Props) => {
             </Grid>
         </Layout>
     );
-}
+
+};
 
 IndexPage.getInitialProps = async () => {
 
     const res = await fetch('http://192.168.100.113:1999/skills?term=serverside');
     const data = await res.json();
     return { skills: data }
-}
+
+};
 
 export default IndexPage
