@@ -24,9 +24,9 @@ const Skills: React.FC<Props> = (props: Props) => {
 
     const classes = useStyles();
 
-    const serverside = props.skills.filter(skill => skill.term === 'serverside');
-    const frontend = props.skills.filter(skill => skill.term === 'frontend');
-    const infrastructure = props.skills.filter(skill => skill.term === 'infrastructure');
+    const serverside: Skill[] = props.skills.filter(skill => skill.term === 'serverside');
+    const frontend: Skill[] = props.skills.filter(skill => skill.term === 'frontend');
+    const infrastructure: Skill[] = props.skills.filter(skill => skill.term === 'infrastructure');
 
     return (
         <div>
