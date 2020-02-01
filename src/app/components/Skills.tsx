@@ -2,6 +2,12 @@ import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardContent, Grid, Typography } from '@material-ui/core';
 
+import { Skill } from '../interfaces';
+
+type Props = {
+    skills: Skill[];
+}
+
 const useStyles = makeStyles({
     card: {
         display: 'flex',
@@ -13,21 +19,6 @@ const useStyles = makeStyles({
         width: 160,
     },
 });
-
-interface Props {
-    skills: Array<{
-        category: Array<{
-            id: number
-            name: string
-        }>
-        created_at: string
-        detail: string
-        duration: number
-        name: string
-        self_evaluation: number
-        term: string
-    }>
-}
 
 const Skills: React.FC<Props> = (props: Props) => {
 

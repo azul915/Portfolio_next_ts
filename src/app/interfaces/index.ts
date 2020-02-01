@@ -10,14 +10,14 @@ export type User = {
 }
 
 export type Skill = {
-  category: {
-    id: number
-    name: string
-  }
-  created_at: string
-  detail: string
-  duration: number
-  name: string
-  self_evaluation: number
-  term: string
+  category:        Array<{
+    id:   number;
+    name: string;
+  }>;
+  created_at:      string;
+  detail:          string;
+  duration:        number;
+  name:            string;
+  self_evaluation: number;
+  term:            string;
 }

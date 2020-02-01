@@ -11,25 +11,13 @@ import Profile from '../components/Profile';
 import Skills from '../components/Skills';
 import Products from '../components/Products';
 import Blog from '../components/Blog';
+import { Skill } from '../interfaces';
 
-interface Props {
-    skills: Array<{
-        category: Array<{
-            id: number
-            name: string
-        }>
-        created_at: string
-        detail: string
-        duration: number
-        name: string
-        self_evaluation: number
-        term: string
-    }>
+type Props = {
+    skills: Skill[];
 }
 
 const IndexPage: NextPage<Props> = (props: Props) => {
-
-    const skills = props.skills;
 
     return (
         <Layout title="">
@@ -43,7 +31,7 @@ const IndexPage: NextPage<Props> = (props: Props) => {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Skills skills={skills} />
+                    <Skills skills={props.skills} />
                 </Grid>
 
                 <Grid item xs={12}>
