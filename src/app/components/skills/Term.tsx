@@ -55,29 +55,3 @@ const Term: React.FC<Props> = (props: Props) => {
 };
 
 export default Term
-
-
-// {serverside.map((skill, index) => (
-//     <Grid item xs={12} md={6} key={index}>
-//         <CardActionArea component="a" href="#">
-//             <Card className={classes.card}>
-//                 <div className={classes.cardDetails}>
-//                     <CardContent>
-//                         <Typography component="h2">
-//                             {skill.name}
-//                         </Typography>
-//                         <Typography variant="subtitle1" color="textSecondary">
-//                             {skill.term}
-//                         </Typography>
-//                         <Typography variant="subtitle1" paragraph>
-//                             {skill.detail}
-//                         </Typography>
-//                         <Typography variant="subtitle1" color="primary">
-//                             Continue reading...
-//                         </Typography>
-//                     </CardContent>
-//                 </div>
-//             </Card>
-//         </CardActionArea>
-//     </Grid>
-// ))}
