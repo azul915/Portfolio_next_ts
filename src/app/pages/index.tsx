@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { NextPage } from 'next';
-
 import Grid from '@material-ui/core/Grid';
-
 import fetch from 'isomorphic-unfetch';
-
 import Layout from '../components/Layout';
 import MainImg from '../components/MainImg'
 import Profile from '../components/Profile';
