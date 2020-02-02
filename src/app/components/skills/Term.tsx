@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardContent, Grid, Typography } from '@material-ui/core';
-import { Skill } from '../interfaces';
+import { Skill } from '../../interfaces';
 
 type Props = {
     term: Skill[];

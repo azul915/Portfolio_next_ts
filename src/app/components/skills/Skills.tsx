@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Grid } from '@material-ui/core';
 import Term from './Term'
-import { Skill } from '../interfaces';
+import { Skill } from '../../interfaces';
 
 type Props = {
     skills: Skill[];

@@ -5,7 +5,7 @@ import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
 import MainImg from '../components/MainImg'
 import Profile from '../components/Profile';
-import Skills from '../components/Skills';
+import Skills from '../components/skills/Skills';
 import Products from '../components/Products';
 import Blog from '../components/Blog';
 import { Skill } from '../interfaces';
