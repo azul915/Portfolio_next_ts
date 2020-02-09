@@ -3,12 +3,13 @@ import { NextPage } from 'next';
 import Grid from '@material-ui/core/Grid';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
-import MainImg from '../components/MainImg'
+import MainImg from '../components/mainImg/MainImg'
 import Profile from '../components/Profile';
 import Skills from '../components/skills/Skills';
 import Products from '../components/Products';
 import Blog from '../components/Blog';
 import { Skill } from '../interfaces';
+import { mainImgContents } from '../utils/config';
 
 type Props = {
     skills: Skill[];
@@ -20,7 +21,7 @@ const IndexPage: NextPage<Props> = (props: Props) => {
         <Layout title="">
             <Grid container>
                 <Grid item xs={12}>
-                    <MainImg />
+                    <MainImg cont={mainImgContents} />
                 </Grid>
 
                 <Grid item xs={12}>

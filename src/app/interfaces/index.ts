@@ -21,3 +21,8 @@ export type Skill = {
   self_evaluation: number;
   term:            string;
 }
+
+export type Cont = {
+  messages:     string[];
+  image:       string;
+}
