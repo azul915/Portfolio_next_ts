@@ -19,13 +19,14 @@ const useStyles = makeStyles({
     },
 });
 
-const Term: React.FC<Props> = (props: Props) => {
+const Term: React.FC<Props> = ({ term }) => {
 
     const classes = useStyles();
 
+    // TODO: UI実装
     return (
         <>
-            {props.term.map((skill, index) => (
+            {term.map((skill, index) => (
                 <Grid item xs={12} md={6} key={index}>
                     <CardActionArea component="a" href="#">
                         <Card className={classes.card}>
