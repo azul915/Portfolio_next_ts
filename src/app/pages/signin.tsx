@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-// TODO: GoのAuthenticate用のAPIをonClickで実行
+// TODO: JWT実装
 const SignInPage: React.FC = () => {
 
     const classes = useStyles();

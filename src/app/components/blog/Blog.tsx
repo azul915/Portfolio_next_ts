@@ -10,6 +10,7 @@ const Blog: React.FC<Props>= (props: Props) => {
 
     const posts = props.posts;
 
+    // TODO: Remove this is Blog
     return (
         <>
             <h1>this is Blog</h1>
