@@ -6,7 +6,7 @@ import fetch from "isomorphic-unfetch"
 import MainImg from "../components/mainImg/MainImg"
 import Profile from "../components/Profile"
 import Skills from '../components/skills/Skills';
-import Products from "../components/Products"
+import Products from "../components/products/Products"
 import Blog from "../components/blog/Blog"
 import { Skill, Post } from "../interfaces"
 import { mainImgContents } from "../utils/config"
@@ -72,7 +72,8 @@ const Index: NextPage<Props> = (props: Props) => {
 
 Index.getInitialProps = async () => {
 
-    const skills = await fetch("http://192.168.100.113:1999/skills")
+    // api側のコンテナが作成される度にipが変更されるので、static ipを振る必要がある
+    const skills = await fetch("http://172.19.0.1:1999/skills")
     const skills_data = await skills.json()
 
     const qiita = await fetch("https://qiita.com/api/v2/users/azul915/items")
