@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography"
 import fetch from "isomorphic-unfetch"
 import MainImg from "../components/mainImg/MainImg"
 import Profile from "../components/Profile"
-import Skills from '../components/skills/Skills';
+import Skills from "../components/skills/Skills"
 import Products from "../components/products/Products"
 import Blog from "../components/blog/Blog"
 import { Skill, Post } from "../interfaces"
