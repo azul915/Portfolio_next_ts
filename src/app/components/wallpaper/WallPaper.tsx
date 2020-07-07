@@ -2,6 +2,7 @@ import React from "react"
 import Typed from "react-typed"
 import { makeStyles } from "@material-ui/core/styles"
 import { Cont } from "../../interfaces"
+import cyan from "@material-ui/core/colors/cyan"
 
 const useStyles = makeStyles({
   typed: {
@@ -15,8 +16,7 @@ const useStyles = makeStyles({
   },
   background: {
     position: "relative",
-    backgroundColor: "#11140b",
-    backgroundImage: `url(../../static/images/background.png)`,
+    backgroundColor: cyan[400],
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -51,14 +51,14 @@ type Props = {
     cont: Cont
 }
 
-const MainImg: React.FC<Props> = (props: Props) => {
+const WallPaper: React.FC<Props> = (props: Props) => {
 
   const classes = useStyles()
 
   const cont = props.cont
 
   return (
-    <div>
+    <>
       <div className={classes.background}>
         <div className={classes.titleWrapper}>
           <h1 className={classes.titleHeader}>
@@ -75,9 +75,9 @@ const MainImg: React.FC<Props> = (props: Props) => {
           </h1>
         </div>
       </div>
-    </div>
+    </>
   )
 
 }
 
-export default MainImg
+export default WallPaper

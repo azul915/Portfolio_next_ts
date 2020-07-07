@@ -3,29 +3,13 @@ import { NextPage } from "next"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import fetch from "isomorphic-unfetch"
-import MainImg from "../components/mainImg/MainImg"
+import WallPaper from "../components/wallpaper/WallPaper"
 import Profile from "../components/Profile"
 import Skills from "../components/skills/Skills"
 import Products from "../components/products/Products"
 import Blog from "../components/blog/Blog"
 import { Skill, Post } from "../interfaces"
-import { mainImgContents } from "../utils/config"
-import { makeStyles } from "@material-ui/core/styles"
-
-const useStyles = makeStyles({
-  root: {},
-  section: {
-    paddingBottom: 3,
-    paddingTop: 3,
-  },
-  sectionHeader: {
-    fontSize: 34,
-    fontWeight: 300,
-    paddingBottom: 0.5,
-    paddingTop: 0.5,
-    textAlign: 'center',
-  },
-})
+import { greeting } from "../utils/config"
 
 type Props = {
   skills: Skill[]
@@ -34,38 +18,38 @@ type Props = {
 
 const Index: NextPage<Props> = (props: Props) => {
 
-  const classes = useStyles()
-
   return (
-    <div className={classes.root}>
-      <MainImg cont={mainImgContents} />
+    <>
       <Grid container>
-        <Grid item xs={12} className={classes.section}>
-          <Typography className={classes.sectionHeader} component="h2">
+        <Grid item xs={12}>
+           <WallPaper cont={greeting}></WallPaper>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h3">
             Profile
             <Profile />
           </Typography>
         </Grid>
-        <Grid item xs={12} className={classes.section}>
-          <Typography className={classes.sectionHeader} component="h2">
+        <Grid item xs={12}>
+          <Typography variant="h3">
             Skills
             <Skills skills={props.skills} />
           </Typography>
         </Grid>
-        <Grid item xs={12} className={classes.section}>
-          <Typography className={classes.sectionHeader} component="h2">
+        <Grid item xs={12}>
+          <Typography variant="h3">
             Products
             <Products />
           </Typography>
         </Grid>
-        <Grid item xs={12} className={classes.section}>
-          <Typography className={classes.sectionHeader} component="h2">
+        <Grid item xs={12}>
+          <Typography variant="h3">
             Blog
-            <Blog posts={props.posts}/>
+            <Blog posts={props.posts}></Blog>
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </>
   )
 
 }
