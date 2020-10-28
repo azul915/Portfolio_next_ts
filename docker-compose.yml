@@ -1,9 +1,13 @@
-version: '3'
+version: '3.4'
 services:
+
   react:
-    build: ./src
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
     container_name: react
+    command: ["yarn", "next", "-p", "8083"]
     ports:
-        - 8083:3000
-    volumes: 
+      - 8083:8083
+    volumes:
       - ./src/app:/usr/src/app
