@@ -56,8 +56,9 @@ const Index: NextPage<Props> = (props: Props) => {
 
 Index.getInitialProps = async () => {
 
-    // api側のコンテナが作成される度にipが変更されるので、static ipを振る必要がある
-    const skills = await fetch("http://172.19.0.1:1999/skills")
+    // [how to create docker network] $ docker network create --driver bridge go_api
+    // http://service:Port
+    const skills = await fetch("http://api:1999/skills")
     const skills_data = await skills.json()
 
     const qiita = await fetch("https://qiita.com/api/v2/users/azul915/items")
